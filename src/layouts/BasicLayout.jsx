@@ -181,7 +181,10 @@ const BasicLayout = (props) => {
             type='editable-card'
             activeKey={activeTabKey}
             hideAdd={true}
-            defaultActiveKey='1'
+            onTabClick={(activeKey)=>{
+              setActiveTabKey(activeKey)
+              history.push(activeKey)
+            }}
           >
             {
               tabs.map(tab => <Tabs.TabPane key={tab.key} tab={tab.title} />)
