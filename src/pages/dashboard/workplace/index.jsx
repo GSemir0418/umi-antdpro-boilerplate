@@ -140,7 +140,6 @@ class Workplace extends Component {
 
     return (
       <PageContainer
-        breadcrumb={false}
         content={<PageHeaderContent currentUser={currentUser} />}
         extraContent={<ExtraContent />}
       >
