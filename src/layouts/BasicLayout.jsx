@@ -32,7 +32,7 @@ const noMatch = (
 /** Use Authorized check all menu item */
 const menuDataRender = menuList =>
   menuList.map(item => {
-    const tabMenu = tabMenus.filter(tabMenu => tabMenu.path === item.path)
+    const tabMenu = tabMenus.filter(tm => tm.path === item.path)
     if (tabMenu.length === 0 && item.name) {
       tabMenus.push({
         title: item.name,
