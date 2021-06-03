@@ -289,6 +289,8 @@ export default defineConfig({
               name: 'editor',
               icon: 'highlight',
               path: '/editor',
+              Routes: ['src/pages/Authorized'],
+              authority: ['admin'],
               routes: [
                 {
                   path: '/',
@@ -311,6 +313,25 @@ export default defineConfig({
                   icon: 'smile',
                   path: '/editor/koni',
                   component: './editor/koni',
+                },
+              ],
+            },
+            {
+              name: 'testFa',
+              icon: 'highlight',
+              path: '/test',
+              Routes: ['src/pages/Authorized'],
+              authority: ['admin', 'user'],
+              routes: [
+                {
+                  path: '/',
+                  redirect: '/test/test',
+                },
+                {
+                  name: 'testSon',
+                  icon: 'smile',
+                  path: '/test/test',
+                  component: './test/test',
                 },
               ],
             },

@@ -90,8 +90,8 @@ const BasicLayout = props => {
       })
     }
   }, [])
-  /** Init variables */
 
+  /** Init variables */
   const handleMenuCollapse = payload => {
     if (dispatch) {
       dispatch({
@@ -99,16 +99,18 @@ const BasicLayout = props => {
         payload,
       })
     }
-  } // get children authority
+  } 
 
+  // get children authority
   const authorized = useMemo(
     () =>
       getMatchMenu(location.pathname || '/', menuDataRef.current).pop() || {
         authority: undefined,
       },
     [location.pathname],
-  )
+    )
   const { formatMessage } = useIntl()
+
   const removeTabs = (activeKey, action) => {
     if (action === 'remove') {
       const newTabs = [...tabs]
@@ -136,6 +138,7 @@ const BasicLayout = props => {
       }
     }
   }
+
   const closeTabs = ({ key }) => {
     if (key === 'others') {
       setTabs(tabs.filter(item => item.key === activeTabKey))

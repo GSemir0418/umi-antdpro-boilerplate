@@ -1,7 +1,7 @@
 import React from 'react';
 import CheckPermissions from './CheckPermissions';
-/** 默认不能访问任何页面 default is "NULL" */
 
+/** 默认不能访问任何页面 default is "NULL" */
 const Exception403 = () => 403;
 
 export const isComponentClass = (component) => {
@@ -9,11 +9,12 @@ export const isComponentClass = (component) => {
   const proto = Object.getPrototypeOf(component);
   if (proto === React.Component || proto === Function.prototype) return true;
   return isComponentClass(proto);
-}; // Determine whether the incoming component has been instantiated
+}; 
+
+// Determine whether the incoming component has been instantiated
 // AuthorizedRoute is already instantiated
 // Authorized  render is already instantiated, children is no instantiated
 // Secured is not instantiated
-
 const checkIsInstantiation = (target) => {
   if (isComponentClass(target)) {
     const Target = target;
@@ -26,6 +27,7 @@ const checkIsInstantiation = (target) => {
 
   return () => target;
 };
+
 /**
  * 用于判断是否拥有权限访问此 view 权限 authority 支持传入 string, () => boolean | Promise e.g. 'user' 只有 user 用户能访问
  * e.g. 'user,admin' user 和 admin 都能访问 e.g. ()=>boolean 返回true能访问,返回false不能访问 e.g. Promise then 能访问
