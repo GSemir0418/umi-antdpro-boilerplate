@@ -99,16 +99,14 @@ const BasicLayout = props => {
         payload,
       })
     }
-  } 
+  }
 
   // get children authority
   const authorized = useMemo(
     () =>
-      getMatchMenu(location.pathname || '/', menuDataRef.current).pop() || {
-        authority: undefined,
-      },
+      getMatchMenu(location.pathname || '/', menuDataRef.current).pop() || { authority: undefined },
     [location.pathname],
-    )
+  )
   const { formatMessage } = useIntl()
 
   const removeTabs = (activeKey, action) => {
@@ -214,6 +212,9 @@ const BasicLayout = props => {
         postMenuData={menuData => {
           menuDataRef.current = menuData || []
           return menuData || []
+        }}
+        waterMarkProps={{
+          content: 'SUPCON',
         }}
       >
         <Authorized authority={authorized.authority} noMatch={noMatch}>

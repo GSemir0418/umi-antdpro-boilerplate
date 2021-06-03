@@ -49,4 +49,6 @@ export default {
   'menu.editor.flow': '流程编辑器',
   'menu.editor.mind': '脑图编辑器',
   'menu.editor.koni': '拓扑编辑器',
+  'menu.testFa':'测试主菜单',
+  'menu.testFa.testSon':'测试子菜单'
 };

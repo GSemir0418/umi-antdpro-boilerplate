@@ -32,6 +32,7 @@ function autoHeight() {
       state = {
         computedHeight: 0,
       };
+
       root = undefined;
 
       componentDidMount() {
